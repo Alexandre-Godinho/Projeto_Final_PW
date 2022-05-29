@@ -254,9 +254,8 @@ main{
 
 .projectcontent{
     display: flex;
-    flex-flow: row wrap;
-
-    justify-content: space-between;;
+    flex-flow: row;
+    justify-content: space-between;
 }
 
 .projectcontent > img{
