@@ -260,8 +260,8 @@ main{
 }
 
 .projectcontent > img{
-    height: 50vw;
-    width: 50vw;
+    height: available;
+    width: 75vw;
 }
 
 @media (min-width: 900px) {
