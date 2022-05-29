@@ -25,7 +25,7 @@ class Subject(models.Model):
 
 
 class Project(models.Model):
-    title = models.CharField(max_length=20)
+    title = models.CharField(max_length=45)
     description = models.CharField(max_length=500)
     image = models.CharField(max_length=500)
     subject = models.ForeignKey(Subject, on_delete=models.CASCADE)
