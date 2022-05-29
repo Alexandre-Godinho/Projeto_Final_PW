@@ -260,8 +260,8 @@ main{
 }
 
 .projectcontent > img{
-    height: 20vw;
-    width: 20vw;
+    height: 50vw;
+    width: 50vw;
 }
 
 .projecttext{
@@ -272,6 +272,10 @@ main{
     .projects {
         font-size: 25px;
         line-height: 30px;
+    }
+    .projectcontent > img{
+        height: 20vw;
+        width: 20vw;
     }
 }
 
