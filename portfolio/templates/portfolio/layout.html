@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <title>Alexandre Godinho</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'portfolio/css/estilos.css' %}">
+</head>
+<body>
+    <header>
+        <a href="{% url 'portfolio:home' %}">Alexandre Godinho</a>
+        <nav class="navbar">
+            <a href="{% url 'portfolio:home' %}">HOME</a>
+            <a href="{% url 'portfolio:aboutme' %}">SOBRE MIM</a>
+            <a href="{% url 'portfolio:projects' %}">PROJETOS</a>
+            <a href="{% url 'portfolio:graduation' %}">LICENCIATURA</a>
+        </nav>
+    </header>
+	<main>
+        {% block main %}
+	    {% endblock main %}
+    </main>
+    <footer>
+        <div>ULHT 2022</div>
+    </footer>
+</body>
+</html>

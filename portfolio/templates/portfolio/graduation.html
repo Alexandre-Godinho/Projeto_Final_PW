@@ -1,0 +1,22 @@
+ <!-- graduation.html -->
+
+    {% extends 'portfolio/layout.html' %}
+
+    {% block main %}
+    <div class="graduation">
+        {% for subject in subjects %}
+        <div class="subject">
+            <a href="{{ subject.lusofona }}"><p class="name">{{ subject.name }}</p></a>
+            <p class="year">{{ subject.year }}º ano</p>
+            <p class="semester">{{ subject.semester }}º semestre</p>
+            <p class="ects">{{ subject.ects }} ECTs</p>
+            <p class="ranking">{{ subject.ranking }}</p>
+            <div class="teacher">
+                <p class="name">Docente: {{ subject.teacher.name }}</p>
+                <p class="lusofona"><a href="{{ subject.teacher.lusofona }}">link lusofona</a></p>
+                <p class="linkedin"><a href="{{ subject.teacher.linkedin }}">link linkedin</a></p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    {% endblock %}
