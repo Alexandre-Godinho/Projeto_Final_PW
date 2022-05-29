@@ -1,0 +1,161 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+/* Barra de navegação da página */
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+
+    background-color: #333333;
+    /* Imagem em vez de cor estática
+    background-image: url("../images/image.db078429c50c.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: auto;
+    background-attachment: scroll;
+     */
+    height: 40px;
+}
+
+header .navbar{
+    display: flex;
+    justify-content: flex-end;
+}
+
+header a{
+    display: block;
+    text-decoration: none;
+    padding: 0 1em;
+    font-size: 1rem;
+    color: #d4d4d4;
+    transition: all 500ms;
+}
+
+header .navbar a:hover{
+    color: #f9f9f9;
+}
+
+/* Caso a página seja vista num ecrã com 600px máximos */
+@media (max-width: 600px) {
+    header{
+    }
+}
+
+/* Corpo da página */
+main{
+
+}
+
+/* Página "HOME" */
+.spacer{
+    background-image: url("../images/image2.c4392ee141bc.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    background-color: #f9f9f9;
+    height: 50vh;
+}
+.home{
+    background-color: #f9f9f9;
+    color: #000000;
+    height: 50vh;
+}
+
+/* Página "SOBRE MIM" */
+main .licenciatura{
+    background-color: #f9f9f9;
+    color: #000000;
+    height: 50vh;
+}
+
+main .educacao{
+    background-color: #000000;
+    color: #f9f9f9;
+    height: 50vh;
+}
+
+main .competencias{
+    background-color: #f9f9f9;
+    color: #000000;
+    height: 50vh;
+}
+
+main .interesses{
+    background-color: #000000;
+    color: #f9f9f9;
+    height: 50vh;
+}
+
+/* Página "LICENCIATURA" */
+.graduation {
+    background-color: #f9f9f9;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    padding: 5vh 5vh;
+    font-size: 15px;
+    line-height: 20px;
+}
+
+.graduation > div {
+    float: left;
+    width: 75vw;
+    padding: 1vw; margin: 1vw;
+    background-color: #f9f9f9;
+    border-radius: 1px;
+    box-shadow: 5px 5px 10px #333333;
+}
+
+.teacher {
+    float: left;
+    width: 75vw;
+    background-color: #f9f9f9;
+    border-radius: 1px;
+    box-shadow: 5px 5px 10px #333333;
+    display: block;
+    flex-flow: row wrap;
+}
+
+@media (min-width: 900px) {
+    .graduation {
+        font-size: 25px;
+        line-height: 30px;
+    }
+    .graduation > div{
+        width: 40vw;
+    }
+    .teacher{
+        width: 40vw;
+    }
+}
+
+/* Página "PROJETOS" */
+.projects {
+    background-color: #f9f9f9;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    padding: 5vh 5vh;
+    font-size: 25px;
+}
+
+.projects > div {
+    float: left;
+    width: 75vw;  height: 300px;
+    padding: 10px; margin: 10px;
+    background-color: #f9f9f9;
+    border-radius: 1px;
+    box-shadow: 5px 5px 10px #333333;
+}
+
+/* Footer da página */
+footer{
+    display: flex;
+    justify-content: center;
+}
