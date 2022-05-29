@@ -3,18 +3,38 @@
     {% extends 'portfolio/layout.html' %}
 
     {% block main %}
-    <h3>Alexandre Godinho</h3>
+    <div class="spacer"></div>
     <div class="licenciatura">
-        <div></div>
-        <p>licenciatura</p>
+        <div class="text">
+            <h1>Licenciatura</h1>
+            <p>Neste momento, estou a realizar uma <a href="{% url 'portfolio:graduation' %}">Licenciatura de Engenharia Informática</a> na Universidade Lusófona de Humanidades e Tecnologias.</p>
+        </div>
+        <div class="photo">
+            {% load static %}
+            <a href="https://www.ulusofona.pt/"><img src="{% static 'portfolio/images/logo_ulht_horizontal.png' %}"></a>
+        </div>
     </div>
     <div class="educacao">
-        <p>educacao</p>
+        <div class="text">
+            <h1>Educação</h1>
+            <p>Realizei os primeiros quatro anos de escolaridade (1º ao 4º ano) na Escola Básica 1 nº 4 de Alverca.</p>
+            <p>Realizei os cinco seguintes anos de escolaridade (5º ao 9º ano) na Escola Básica 2,3 Pedro Jacques de Magalhães, em Alverca.</p>
+            <p>Por fim, realizei o curso de Ciências e Tecnologias na Escola Secundária Gago Coutinho, em Alverca.</p>
+        </div>
     </div>
     <div class="competencias">
-        <p>competencias</p>
+        <div class="text">
+            <h1>Competências</h1>
+            <p>Em termos práticos, tenho conhecimentos em diversas Linguagens: C, Lua, Kotlin, Java, entre outras.</p>
+        </div>
     </div>
     <div class="interesses">
-        <p>interesses</p>
+        <div class="text">
+            <h1>Interesses</h1>
+            <p>Desde pequeno que demonstrei grande interesse por videojogos e, por consequência, por computadores.</p>
+            <p>Esse gosto criou o interesse pela área de desenvolvimento de jogos, tendo já realizado scripts básicos para</p>
+            <p>FiveM e realizado modelação 3D de forma a modificar o mapa do jogo.</p>
+        </div>
     </div>
+    <div class="spacer"></div>
     {% endblock %}

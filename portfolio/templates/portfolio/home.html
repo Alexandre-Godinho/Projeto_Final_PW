@@ -5,7 +5,22 @@
     {% block main %}
     <div class="spacer"></div>
     <div class="home">
-        <article>teste</article>
+        <div class="photo">
+            {% load static %}
+            <a href="{% url 'portfolio:aboutme' %}"><img src="{% static 'portfolio/images/me.png' %}"></a>
+        </div>
+        <div class="text">
+            <h1>Alexandre Godinho</h1>
+            <p>Bem-vindo! Esta página dedica-se a apresentar o meu precurso escolar, académico e pessoal.</p>
+            <p>Este precurso encontra-se exposto por categorias de forma a facilitar a sua vizualização.</p>
+            <p>Para informações mais detalhadas pressione <a href="{% url 'portfolio:aboutme' %}">SOBRE MIM</a>!</p>
+        </div>
+        <div class="social">
+            <a href="https://www.facebook.com/alexandre.godinho.395"><img src="{% static 'portfolio/images/black_facebook.png' %}"></a>
+            <a href="https://www.instagram.com/god_alexandre/"><img src="{% static 'portfolio/images/black_instagram.png' %}"></a>
+            <a href="https://www.linkedin.com/in/alexandre-godinho-221840182/"><img src="{% static 'portfolio/images/black_linkedin.png' %}"></a>
+            <a href="https://moodle.ensinolusofona.pt/user/profile.php?id=5967"><img src="{% static 'portfolio/images/black_ulht.png' %}"></a>
+        </div>
     </div>
     <div class="spacer"></div>
     {% endblock %}

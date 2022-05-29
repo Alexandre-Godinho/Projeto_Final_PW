@@ -5,6 +5,9 @@
     <title>Alexandre Godinho</title>
     {% load static %}
     <link rel="stylesheet" href="{% static 'portfolio/css/estilos.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@500&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
@@ -13,7 +16,6 @@
             <a href="{% url 'portfolio:home' %}">HOME</a>
             <a href="{% url 'portfolio:aboutme' %}">SOBRE MIM</a>
             <a href="{% url 'portfolio:projects' %}">PROJETOS</a>
-            <a href="{% url 'portfolio:graduation' %}">LICENCIATURA</a>
         </nav>
     </header>
 	<main>

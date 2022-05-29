@@ -1,6 +1,7 @@
 *{
     padding: 0;
     margin: 0;
+    font-family: 'Cairo', sans-serif;
 }
 
 /* Barra de navegação da página */
@@ -59,37 +60,105 @@ main{
     background-size: cover;
     background-attachment: fixed;
     background-color: #f9f9f9;
-    height: 50vh;
+    height: 25vh;
 }
 .home{
     background-color: #f9f9f9;
     color: #000000;
     height: 50vh;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 1vh 1vh;
+}
+
+.photo{
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 1vh 1vh;
+}
+.photo{
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 1vh 1vh;
+}
+
+.text{
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 1vh 1vh;
+}
+
+.text h1{
+    font-size: 30px;
+}
+
+.text p{
+    font-size: 15px;
+}
+
+.social{
+    display: flex;
+    flex-flow: column;
+    padding: 1vh 1vh;
+}
+
+.social img{
+    width: 50px;
+}
+
+@media (min-width: 900px) {
+    .text h1{
+        font-size: 40px;
+    }
+    .text p{
+        font-size: 20px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .text h1{
+        font-size: 50px;
+    }
+    .text p{
+        font-size: 25px;
+    }
 }
 
 /* Página "SOBRE MIM" */
-main .licenciatura{
+.licenciatura{
+    background-color: #fdfdfd;
+    color: #000000;
+    height: 30vh;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 1vh 1vh;
+}
+
+.educacao{
     background-color: #f9f9f9;
     color: #000000;
-    height: 50vh;
+    height: 30vh;
 }
 
-main .educacao{
-    background-color: #000000;
-    color: #f9f9f9;
-    height: 50vh;
+.competencias{
+    background-color: #fdfdfd;
+    color: #000000;
+    height: 20vh;
 }
 
-main .competencias{
+.interesses{
     background-color: #f9f9f9;
     color: #000000;
-    height: 50vh;
-}
-
-main .interesses{
-    background-color: #000000;
-    color: #f9f9f9;
-    height: 50vh;
+    height: 30vh;
 }
 
 /* Página "LICENCIATURA" */
@@ -112,14 +181,37 @@ main .interesses{
     box-shadow: 5px 5px 10px #333333;
 }
 
+.subject a{
+    text-decoration: none;
+}
+
+.subject h2{
+    color: #000000;
+    text-align: center;
+}
+
+.subject h3{
+    color: #000000;
+    padding: 1vw;
+}
+
+.subject p{
+    color: #000000;
+}
+
 .teacher {
-    float: left;
     width: 75vw;
     background-color: #f9f9f9;
     border-radius: 1px;
     box-shadow: 5px 5px 10px #333333;
-    display: block;
-    flex-flow: row wrap;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.teacher img{
+    padding: 0.5vw;
+    width: 50px;
 }
 
 @media (min-width: 900px) {
@@ -142,16 +234,40 @@ main .interesses{
     flex-flow: row wrap;
     justify-content: center;
     padding: 5vh 5vh;
-    font-size: 25px;
+    font-size: 15px;
+    line-height: 20px;
 }
 
 .projects > div {
     float: left;
-    width: 75vw;  height: 300px;
-    padding: 10px; margin: 10px;
+    width: 75vw;
+    padding: 1vw; margin: 1vw;
     background-color: #f9f9f9;
     border-radius: 1px;
     box-shadow: 5px 5px 10px #333333;
+}
+
+.projects h2{
+    color: #000000;
+    text-align: center;
+}
+
+.projectcontent{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: left;
+}
+
+.projecttext{
+    padding-left: 1vh;
+
+}
+
+@media (min-width: 900px) {
+    .projects {
+        font-size: 25px;
+        line-height: 30px;
+    }
 }
 
 /* Footer da página */

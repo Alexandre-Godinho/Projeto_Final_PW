@@ -12,7 +12,8 @@ def aboutme_page_view(request):
 
 
 def projects_page_view(request):
-    return render(request, 'portfolio/projects.html')
+    context = {'projects': Project.objects.all()}
+    return render(request, 'portfolio/projects.html', context)
 
 
 def graduation_page_view(request):
