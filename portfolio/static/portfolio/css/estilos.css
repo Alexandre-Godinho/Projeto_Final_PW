@@ -62,9 +62,9 @@ header .navbar a:hover{
 .home{
     background-color: #f9f9f9;
     color: #000000;
-    height: 400px;
+    height: 75vh;
     display: flex;
-    flex-flow: row wrap;
+    flex-flow: row nowrap;
     justify-content: space-evenly;
     align-items: center;
     padding: 1vh 1vh;
@@ -112,6 +112,9 @@ header .navbar a:hover{
 }
 
 @media (min-width: 900px) {
+    .home{
+        height: 400px;
+    }
     .text h1{
         font-size: 40px;
     }
