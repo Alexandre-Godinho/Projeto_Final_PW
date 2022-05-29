@@ -255,12 +255,17 @@ main{
 .projectcontent{
     display: flex;
     flex-flow: row wrap;
-    justify-content: left;
+
+    justify-content: space-between;;
+}
+
+.projectcontent > img{
+    height: 20vw;
+    width: 20vw;
 }
 
 .projecttext{
     padding-left: 1vh;
-
 }
 
 @media (min-width: 900px) {

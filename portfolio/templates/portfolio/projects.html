@@ -8,11 +8,11 @@
         <div class="project">
             <h2 class="title">{{ project.title }}</h2>
             <div class="projectcontent">
-                <img src="{{ project.image }}" class="image">
                 <div class="projecttext">
                     <p class="subject">Realizado no âmbito de <a href="">{{ project.subject.name }}</a> em {{ project.year }}</p>
                     <p class="description">{{ project.description }}</p>
                 </div>
+                <img src="{{ project.image }}" class="image">
             </div>
         </div>
         {% endfor %}
