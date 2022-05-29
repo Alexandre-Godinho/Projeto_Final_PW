@@ -254,8 +254,9 @@ main{
 
 .projectcontent{
     display: flex;
-    flex-flow: row;
+    flex-flow: row wrap;
     justify-content: space-between;
+    padding: 1vh; margin: 1vh;
 }
 
 .projectcontent > img{
@@ -263,14 +264,13 @@ main{
     width: 50vw;
 }
 
-.projecttext{
-    padding-left: 1vh;
-}
-
 @media (min-width: 900px) {
     .projects {
         font-size: 25px;
         line-height: 30px;
+    }
+    .projectcontent{
+        flex-flow: row nowrap;
     }
     .projectcontent > img{
         height: 20vw;
