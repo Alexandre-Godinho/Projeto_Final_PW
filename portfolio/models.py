@@ -3,7 +3,7 @@ from django.db import models
 
 # Create your models here.
 class Teacher(models.Model):
-    name = models.CharField(max_length=30)
+    name = models.CharField(max_length=50)
     lusofona = models.CharField(max_length=500)
     linkedin = models.CharField(max_length=500)
 
@@ -12,7 +12,7 @@ class Teacher(models.Model):
 
 
 class Subject(models.Model):
-    name = models.CharField(max_length=45)
+    name = models.CharField(max_length=50)
     year = models.IntegerField()
     semester = models.IntegerField()
     ects = models.IntegerField()
@@ -25,7 +25,7 @@ class Subject(models.Model):
 
 
 class Project(models.Model):
-    title = models.CharField(max_length=45)
+    title = models.CharField(max_length=50)
     description = models.CharField(max_length=500)
     image = models.CharField(max_length=500)
     subject = models.ForeignKey(Subject, on_delete=models.CASCADE)
