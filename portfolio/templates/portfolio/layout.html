@@ -8,6 +8,42 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@500&display=swap" rel="stylesheet">
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const time = new Date();
+            // Envia pedido GET ao URL da API Exchange
+            fetch('https://api.ipma.pt/open-data/forecast/meteorology/cities/daily/hp-daily-forecast-day0.json')
+
+                // Põe resposta no formato json
+                .then(response => response.json())
+
+                .then(data => {
+
+                    // Obter o valor dos dados
+                    const valor = data;
+                    console.log(valor)
+                    const valorMin = data.data[12].tMin;
+                    const valorMax = data.data[12].tMax;
+
+                    // Verifica se o valor é válido.
+                    if (valorMin !== undefined && valorMax !== undefined) {
+                        // Mostra valor de cambio no ecrã
+                        document.querySelector('#temp').innerHTML =
+                            `Temperatura mínima: ${valorMin}º Temperatura máxima: ${valorMax}º`;
+                    } else {
+                        // Display error on the screen
+                        document.querySelector('#temp').innerHTML = 'Sem temperatura.';
+                    }
+                })
+                // Catch apanha erros e mostra na consola
+                .catch(error => {
+                    console.log('Error:', error);
+                });
+
+            // Previne submissão do formulário
+            return false
+        });
+    </script>
 </head>
 <body>
     <header>
@@ -23,7 +59,9 @@
 	    {% endblock main %}
     </main>
     <footer>
+        <div id="temp"></div>
         <div>ULHT 2022</div>
+        <div id="time"></div>
     </footer>
 </body>
 </html>

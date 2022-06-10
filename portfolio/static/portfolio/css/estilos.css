@@ -37,7 +37,7 @@ header a{
     transition: all 500ms;
 }
 
-header .navbar a:hover{
+header a:hover{
     color: #f9f9f9;
 }
 
@@ -281,5 +281,6 @@ header .navbar a:hover{
 /* Footer da página */
 footer{
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    align-items: center;
 }
