@@ -1,0 +1,9 @@
+<body>
+     <form action="{% url 'users:register' %}" method="post">
+        {% csrf_token %}
+        {{form.as_p}}
+        <input type="submit">
+
+         Se já tiveres conta faz <a href="{% url 'users:login' %}">login</a>.
+    </form>
+</body>

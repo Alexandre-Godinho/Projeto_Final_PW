@@ -1,6 +1,8 @@
-from django.shortcuts import render
-#  hello/views.py
-from portfolio.models import Subject, Teacher, Project
+import datetime
+
+from django.shortcuts import render, redirect
+from portfolio.forms import SubjectForm, ProjectForm, PostForm
+from portfolio.models import Subject, Project, Post
 
 
 def home_page_view(request):
@@ -19,6 +21,54 @@ def projects_page_view(request):
 def graduation_page_view(request):
     context = {'subjects': Subject.objects.all()}
     return render(request, 'portfolio/graduation.html', context)
+
+
+def blog_page_view(request):
+    context = {'posts': Post.objects.all()}
+    return render(request, 'portfolio/blog.html', context)
+
+
+def add_subject_view(request):
+    form = SubjectForm(request.POST)
+    if form.is_valid():
+        form.save()
+        return redirect("portfolio:home")
+    context = {'form': form}
+    return render(request, 'portfolio/add_subject.html', context)
+
+
+def remove_subject_view(request):
+    return
+
+
+def add_project_view(request):
+    form = ProjectForm(request.POST)
+    if form.is_valid():
+        form.save()
+        return redirect("portfolio:home")
+    context = {'form': form}
+    return render(request, 'portfolio/add_project.html', context)
+
+
+def remove_project_view(request):
+    return
+
+
+def add_post_view(request):
+    form = PostForm(request.POST)
+    if form.is_valid():
+        data = form.cleaned_data
+        date = datetime.datetime.now()
+        post = Post(author=data["author"], title=data["title"], date=date, description=data["description"], image=data["image"], link=data["link"])
+        post.save()
+        return redirect("portfolio:blog")
+    context = {'form': form}
+    return render(request, 'portfolio/add_post.html', context)
+
+
+def remove_post_view(request, post_id):
+    Post.objects.get(id=post_id).delete()
+    return redirect("portfolio:home")
 
 
 def index(request):

@@ -278,6 +278,55 @@ header a:hover{
     }
 }
 
+/* Página "BLOG" */
+.posts {
+    background-color: #f9f9f9;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 5vh 5vh;
+    font-size: 15px;
+    line-height: 20px;
+}
+
+.posts > div {
+    float: left;
+    width: 75vw;
+    padding: 1vw; margin: 1vw;
+    background-color: #f9f9f9;
+    border-radius: 1px;
+    box-shadow: 5px 5px 10px #333333;
+}
+
+.posts h2{
+    color: #000000;
+    text-align: center;
+}
+
+.post{
+    padding: 1vh; margin: 1vh;
+}
+
+.post > img{
+    height: available;
+    width: 75vw;
+}
+
+@media (min-width: 900px) {
+    .posts {
+        font-size: 25px;
+        line-height: 30px;
+    }
+    .post{
+        flex-flow: row nowrap;
+    }
+    .post > img{
+        height: 20vw;
+        width: 20vw;
+    }
+}
+
 /* Footer da página */
 footer{
     display: flex;

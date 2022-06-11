@@ -33,3 +33,15 @@ class Project(models.Model):
 
     def __str__(self):
         return f"{self.title}"
+
+
+class Post(models.Model):
+    author = models.CharField(max_length=50)
+    title = models.CharField(max_length=50)
+    date = models.DateTimeField()
+    description = models.CharField(max_length=500)
+    image = models.CharField(max_length=500)
+    link = models.CharField(max_length=500)
+
+    def __str__(self):
+        return f"{self.title}"

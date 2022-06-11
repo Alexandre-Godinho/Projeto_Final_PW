@@ -1,0 +1,18 @@
+ <!-- blog.html -->
+
+    {% extends 'portfolio/layout.html' %}
+
+    {% block main %}
+    <div class="posts">
+        <a href="{% url 'portfolio:add_post' %}" class="">Criar publicação</a>
+        {% for post in posts %}
+        <div class="post">
+            <h2 class="title">{{ post.title }}</h2>
+            <p class="description">{{ post.description }}</p>
+            <img src="{{ post.image }}" class="image">
+            <p class="link">{{ post.link }}</p>
+            <h6 class="author">Postado por: {{ post.author }} no dia {{post.date.day}}/{{post.date.month}}/{{post.date.year}}</h6>
+        </div>
+        {% endfor %}
+    </div>
+    {% endblock %}
