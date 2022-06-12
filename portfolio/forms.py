@@ -1,20 +1,21 @@
 from django import forms
 from django.forms import ModelForm
-from .models import Subject, Project, Post
+from .models import Teacher, Subject, Project, Post
 
 
 class SubjectForm(ModelForm):
     class Meta:
         model = Subject
-        fields = ("name", "year", "semester", "ects", "lusofona", "ranking")
+        fields = ("name", "year", "semester", "ects", "lusofona", "ranking", "teacher")
 
         widgets = {
             "name": forms.TextInput(attrs={"class": "form-control", "placeholder": "Nome", "max": 50}),
-            "year": forms.IntegerField(),
-            "semester": forms.IntegerField(),
-            "ects": forms.IntegerField(),
+            "year": forms.NumberInput(attrs={"class": "form-control"}),
+            "semester": forms.NumberInput(attrs={"class": "form-control"}),
+            "ects": forms.NumberInput(attrs={"class": "form-control"}),
             "lusofona": forms.TextInput(attrs={"class": "form-control", "placeholder": "Link da Lusófuna", "max": 500}),
             "ranking": forms.TextInput(attrs={"class": "form-control", "placeholder": "Ranking", "max": 5}),
+            "teacher": forms.Select(attrs={"class": "form-control"}),
         }
 
         labels = {
@@ -39,13 +40,14 @@ class SubjectForm(ModelForm):
 class ProjectForm(ModelForm):
     class Meta:
         model = Project
-        fields = ("title", "description", "image", "year")
+        fields = ("title", "description", "image", "subject", "year")
 
         widgets = {
             "title": forms.TextInput(attrs={"class": "form-control", "placeholder": "Autor", "max": 50}),
             "description": forms.TextInput(attrs={"class": "form-control", "placeholder": "Descrição", "max": 500}),
             "image": forms.TextInput(attrs={"class": "form-control", "placeholder": "Imagem", "max": 500}),
-            "year": forms.IntegerField(),
+            "subject": forms.Select(attrs={"class": "form-control"}),
+            "year": forms.NumberInput(attrs={"class": "form-control"}),
         }
 
         labels = {
@@ -64,8 +66,6 @@ class ProjectForm(ModelForm):
 
 
 class PostForm(ModelForm):
-    image: forms.CharField(required=False)
-
     class Meta:
         model = Post
         fields = ("author", "title", "description", "link", "image")

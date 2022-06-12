@@ -12,7 +12,7 @@
             <h2 class="title">{{ project.title }}</h2>
             <div class="projectcontent">
                 <div class="projecttext">
-                    <p class="subject">Realizado no âmbito de <a href="">{{ project.subject.name }}</a> em {{ project.year }}</p>
+                    <p class="subject">Realizado no âmbito de <a href="{{ project.subject.lusofona }}">{{ project.subject.name }}</a> em {{ project.year }}</p>
                     <p class="description">{{ project.description }}</p>
                 </div>
                 <img src="{{ project.image }}" class="image">
