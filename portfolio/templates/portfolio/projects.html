@@ -4,6 +4,9 @@
 
     {% block main %}
     <div class="projects">
+        {% if request.user.is_staff %}
+            <a href="{% url 'portfolio:add_project' %}" class="">Adicionar projeto</a>
+        {% endif %}
         {% for project in projects %}
         <div class="project">
             <h2 class="title">{{ project.title }}</h2>

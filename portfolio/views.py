@@ -57,10 +57,7 @@ def remove_project_view(request):
 def add_post_view(request):
     form = PostForm(request.POST)
     if form.is_valid():
-        data = form.cleaned_data
-        date = datetime.datetime.now()
-        post = Post(author=data["author"], title=data["title"], date=date, description=data["description"], image=data["image"], link=data["link"])
-        post.save()
+        form.save()
         return redirect("portfolio:blog")
     context = {'form': form}
     return render(request, 'portfolio/add_post.html', context)
@@ -68,7 +65,7 @@ def add_post_view(request):
 
 def remove_post_view(request, post_id):
     Post.objects.get(id=post_id).delete()
-    return redirect("portfolio:home")
+    return redirect("portfolio:blog")
 
 
 def index(request):

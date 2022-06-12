@@ -165,14 +165,19 @@ header a:hover{
 .graduation {
     background-color: #f9f9f9;
     display: flex;
-    flex-flow: row wrap;
+    flex-flow: column wrap;
     justify-content: center;
+    align-items: center;
     padding: 5vh 5vh;
     font-size: 15px;
     line-height: 20px;
 }
 
-.graduation > div {
+.graduation > div{
+    flex-flow: row wrap;
+}
+
+.graduation .subject {
     float: left;
     width: 75vw;
     padding: 1vw; margin: 1vw;
@@ -219,7 +224,7 @@ header a:hover{
         font-size: 25px;
         line-height: 30px;
     }
-    .graduation > div{
+    .graduation .subject{
         width: 40vw;
     }
     .teacher{
@@ -231,8 +236,9 @@ header a:hover{
 .projects {
     background-color: #f9f9f9;
     display: flex;
-    flex-flow: row wrap;
+    flex-flow: column wrap;
     justify-content: center;
+    align-items: center;
     padding: 5vh 5vh;
     font-size: 15px;
     line-height: 20px;

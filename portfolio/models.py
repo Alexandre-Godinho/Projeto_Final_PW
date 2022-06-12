@@ -36,12 +36,13 @@ class Project(models.Model):
 
 
 class Post(models.Model):
+    id = models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name="ID")
     author = models.CharField(max_length=50)
     title = models.CharField(max_length=50)
-    date = models.DateTimeField()
+    date = models.DateTimeField(auto_now_add=True)
     description = models.CharField(max_length=500)
-    image = models.CharField(max_length=500)
-    link = models.CharField(max_length=500)
+    image = models.CharField(max_length=500, default="")
+    link = models.CharField(max_length=500, default="")
 
     def __str__(self):
         return f"{self.title}"

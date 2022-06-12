@@ -11,7 +11,10 @@
             <p class="description">{{ post.description }}</p>
             <img src="{{ post.image }}" class="image">
             <p class="link">{{ post.link }}</p>
-            <h6 class="author">Postado por: {{ post.author }} no dia {{post.date.day}}/{{post.date.month}}/{{post.date.year}}</h6>
+            <h6 class="author">Postado por: {{ post.author }} no dia {{post.date.day}}/{{post.date.month}}/{{post.date.year}} às {{post.date.hour}}:{{post.date.minute}}</h6>
+            {% if request.user.is_staff %}
+                <a href="{% url 'portfolio:remove_post' post.id %}">Apagar publicação</a>
+            {% endif %}
         </div>
         {% endfor %}
     </div>
