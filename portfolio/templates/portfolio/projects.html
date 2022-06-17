@@ -17,6 +17,9 @@
                 </div>
                 <img src="{{ project.image }}" class="image">
             </div>
+            {% if request.user.is_staff %}
+                <a href="{% url 'portfolio:remove_project' project.id %}">Apagar projeto</a>
+            {% endif %}
         </div>
         {% endfor %}
     </div>

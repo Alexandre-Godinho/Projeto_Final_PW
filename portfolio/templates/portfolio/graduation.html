@@ -25,6 +25,9 @@
                         <a href="{{ subject.teacher.linkedin }}"><img src="{% static 'portfolio/images/logo_linkedin.png' %}" class="linkedin"></a>
                     </div>
                 </div>
+                {% if request.user.is_staff %}
+                    <a href="{% url 'portfolio:remove_subject' subject.id %}">Apagar cadeira</a>
+                {% endif %}
             </div>
             {% endfor %}
          </div>

@@ -37,8 +37,9 @@ def add_subject_view(request):
     return render(request, 'portfolio/add_subject.html', context)
 
 
-def remove_subject_view(request):
-    return
+def remove_subject_view(request, subject_id):
+    Subject.objects.get(id=subject_id).delete()
+    return redirect("portfolio:graduation")
 
 
 def add_project_view(request):
@@ -50,8 +51,9 @@ def add_project_view(request):
     return render(request, 'portfolio/add_project.html', context)
 
 
-def remove_project_view(request):
-    return
+def remove_project_view(request, project_id):
+    Project.objects.get(id=project_id).delete()
+    return redirect("portfolio:projects")
 
 
 def add_post_view(request):
