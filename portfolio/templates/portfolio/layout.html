@@ -10,7 +10,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@500&display=swap" rel="stylesheet">
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-            const time = new Date();
+            currentTime();
+
             // Envia pedido GET ao URL da API Exchange
             fetch('https://api.ipma.pt/open-data/forecast/meteorology/cities/daily/hp-daily-forecast-day0.json')
 
@@ -29,7 +30,7 @@
                     if (valorMin !== undefined && valorMax !== undefined) {
                         // Mostra valor de cambio no ecrã
                         document.querySelector('#temp').innerHTML =
-                            `Temperatura mínima: ${valorMin}º Temperatura máxima: ${valorMax}º`;
+                            `Temperatura em Lisboa: ${valorMin}º - ${valorMax}º`;
                     } else {
                         // Display error on the screen
                         document.querySelector('#temp').innerHTML = 'Sem temperatura.';
@@ -43,6 +44,27 @@
             // Previne submissão do formulário
             return false
         });
+
+        function currentTime() {
+          let date = new Date();
+          let hh = date.getHours();
+          let mm = date.getMinutes();
+          let ss = date.getSeconds();
+          let day = date.getDate();
+          let month = date.getMonth() + 1;
+          let year = date.getFullYear();
+
+           hh = (hh < 10) ? "0" + hh : hh;
+           mm = (mm < 10) ? "0" + mm : mm;
+           ss = (ss < 10) ? "0" + ss : ss;
+
+           let time = day + "/" + month + "/" + year + " " + hh + ":" + mm + ":" + ss;
+
+          document.getElementById("clock").innerText = time;
+          let t = setTimeout(function(){ currentTime() }, 1000);
+        }
+
+        currentTime();
     </script>
 </head>
 <body>
@@ -53,6 +75,7 @@
             <a href="{% url 'portfolio:aboutme' %}">SOBRE MIM</a>
             <a href="{% url 'portfolio:projects' %}">PROJETOS</a>
             <a href="{% url 'portfolio:blog' %}">BLOG</a>
+            <a href="{% url 'portfolio:webdev' %}">PROGRAMAÇÃO WEB</a>
             {% if request.user.is_authenticated %}
                 <a href="{% url 'users:logout' %}" class="">LOGOUT</a>
             {% else %}
@@ -67,7 +90,7 @@
     <footer>
         <div id="temp"></div>
         <div>ULHT 2022</div>
-        <div id="time"></div>
+        <div id="clock" onload="currentTime()"></div>
     </footer>
 </body>
 </html>

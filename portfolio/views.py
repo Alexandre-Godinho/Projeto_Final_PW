@@ -68,5 +68,9 @@ def remove_post_view(request, post_id):
     return redirect("portfolio:blog")
 
 
+def webdev_page_view(request):
+    return render(request, 'portfolio/webdev.html')
+
+
 def index(request):
     pass

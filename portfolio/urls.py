@@ -13,4 +13,5 @@ urlpatterns = [
     path('blog/', views.blog_page_view, name='blog'),
     path('blog/add_post/', views.add_post_view, name='add_post'),
     path('blog/remove_post/<int:post_id>', views.remove_post_view, name='remove_post'),
+    path('webdev/', views.webdev_page_view, name='webdev'),
 ]
